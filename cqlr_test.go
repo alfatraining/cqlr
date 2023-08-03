@@ -3,12 +3,13 @@ package cqlr
 import (
 	"crypto/rand"
 	"fmt"
-	"github.com/gocql/gocql"
-	"github.com/stretchr/testify/assert"
 	"reflect"
-	"speter.net/go/exp/math/dec/inf"
 	"testing"
 	"time"
+
+	"github.com/gocql/gocql"
+	"github.com/stretchr/testify/assert"
+	"gopkg.in/inf.v0"
 )
 
 func TestReflectionOnly(t *testing.T) {
@@ -465,7 +466,7 @@ func TestRebind(t *testing.T) {
 	assert.Nil(t, err, "Could not close binding")
 }
 
-//TestNoCaseColumns is a test case to verify case insensitive columns are mapped properly
+// TestNoCaseColumns is a test case to verify case insensitive columns are mapped properly
 func TestNoCaseColumns(t *testing.T) {
 
 	type Tweet struct {
@@ -524,7 +525,7 @@ func TestUUID(t *testing.T) {
 
 }
 
-//TestCasedColumns is a test case to verify case sensitive columns are mapped properly
+// TestCasedColumns is a test case to verify case sensitive columns are mapped properly
 func TestCasedColumns(t *testing.T) {
 
 	type Tweet struct {
